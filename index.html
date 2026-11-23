@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Salmon Merch Lab — Suppliers</title>
+<style>
+:root{--coral:#F05A5A;--ink:#311754;--mint:#BEF5F1;--char:#231F20;--light:#F3F2EE;--white:#fff;--line:#E4E2DC;--mut:#77737A;
+--font:Gilroy,Arial,"Helvetica Neue",sans-serif}
+*{box-sizing:border-box}html,body{margin:0}body{font-family:var(--font);background:var(--light);color:var(--char);-webkit-font-smoothing:antialiased}
+button,input,select,textarea{font:inherit;color:inherit}
+a{color:inherit}
+.logo{height:26px;width:auto;color:var(--char);display:block}
+header{position:sticky;top:0;z-index:20;background:rgba(243,242,238,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar{max-width:1320px;margin:0 auto;padding:14px 24px;display:flex;gap:18px;align-items:center}
+.bar .t{font-weight:700;font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:var(--mut);border-left:1px solid var(--line);padding-left:16px}
+.sp{flex:1}
+.search{display:flex;align-items:center;gap:8px;background:var(--white);border:1px solid var(--line);border-radius:999px;padding:9px 16px;min-width:300px}
+.search input{border:0;outline:0;background:transparent;width:100%;font-size:15px}
+.btn{border:0;border-radius:999px;padding:10px 18px;font-weight:700;font-size:14px;cursor:pointer;background:var(--char);color:#fff;white-space:nowrap}
+.btn.coral{background:var(--coral)}.btn.ghost{background:transparent;color:var(--char);border:1px solid var(--line)}
+.btn:disabled{opacity:.5;cursor:default}
+.hero{max-width:1320px;margin:0 auto;padding:36px 24px 8px}
+.hero h1{font-size:44px;line-height:1.02;margin:0 0 10px;font-weight:800;letter-spacing:-.02em}
+.hero h1 span{color:var(--coral)}
+.hero p{margin:0;color:var(--mut);font-size:16px}
+.stats{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap}
+.stat{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:10px 16px;font-size:13px;color:var(--mut)}
+.stat b{display:block;font-size:22px;color:var(--char)}
+.filters{max-width:1320px;margin:0 auto;padding:18px 24px 6px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.chip{border:1px solid var(--line);background:var(--white);border-radius:999px;padding:8px 14px;font-size:13px;font-weight:600;cursor:pointer;white-space:nowrap}
+.chip .n{color:var(--mut);font-weight:500;margin-left:4px}
+.chip.on{background:var(--char);color:#fff;border-color:var(--char)}.chip.on .n{color:#bbb}
+.sel{border:1px solid var(--line);background:var(--white);border-radius:999px;padding:8px 12px;font-size:13px;font-weight:600}
+.grid{max-width:1320px;margin:0 auto;padding:14px 24px 80px;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px}
+.card{background:var(--white);border-radius:20px;overflow:hidden;cursor:pointer;border:1px solid var(--line);transition:transform .15s,box-shadow .15s;display:flex;flex-direction:column}
+.card:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(35,31,32,.10)}
+.ph{aspect-ratio:4/3;background:var(--light);position:relative;overflow:hidden}
+.ph img{width:100%;height:100%;object-fit:cover;display:block}
+.ph .ph0{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:44px;font-weight:800;color:var(--coral);background:linear-gradient(135deg,#fbe3e1,#F3F2EE)}
+.ph .cnt{position:absolute;right:10px;bottom:10px;background:rgba(35,31,32,.7);color:#fff;border-radius:999px;padding:3px 9px;font-size:12px;font-weight:600}
+.cb{padding:14px 16px 16px;display:flex;flex-direction:column;gap:6px;flex:1}
+.cat{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--coral)}
+.nm{font-weight:800;font-size:16px;line-height:1.2}
+.pr{font-size:13px;color:var(--mut);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.meta{display:flex;gap:6px;flex-wrap:wrap;margin-top:auto;padding-top:6px}
+.tag{font-size:12px;border-radius:999px;padding:3px 9px;background:var(--light);color:var(--char);font-weight:600}
+.st{font-size:12px;border-radius:999px;padding:3px 9px;font-weight:700}
+.st-Contact{background:#EEE;color:#555}.st-Quoted{background:var(--mint);color:#0d4f49}.st-Sample{background:#FFE6C7;color:#7a4300}
+.st-Ordered{background:#E3DAF2;color:var(--ink)}.st-Worked-with{background:var(--ink);color:#fff}.st-No-reply{background:#F7D9D9;color:#8d2b2b}
+.empty{grid-column:1/-1;text-align:center;color:var(--mut);padding:60px 0}
+/* modal */
+.ov{position:fixed;inset:0;background:rgba(35,31,32,.45);z-index:50;display:none;align-items:stretch;justify-content:flex-end}
+.ov.on{display:flex}
+.dr{background:var(--white);width:min(760px,100%);height:100%;overflow:auto;padding:0 0 60px;animation:sl .2s ease}
+@keyframes sl{from{transform:translateX(40px);opacity:.6}to{transform:none;opacity:1}}
+.dh{position:sticky;top:0;background:var(--white);display:flex;align-items:center;gap:10px;padding:14px 22px;border-bottom:1px solid var(--line);z-index:2}
+.x{border:0;background:var(--light);width:38px;height:38px;border-radius:50%;font-size:20px;cursor:pointer}
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:16px 22px 0}
+.gal img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:12px;cursor:zoom-in;background:var(--light)}
+.gal img:first-child{grid-column:span 3;aspect-ratio:16/10}
+.db{padding:18px 22px}
+.db h2{font-size:28px;line-height:1.1;margin:6px 0 4px;font-weight:800}
+.kv{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:16px 0}
+.kv div{background:var(--light);border-radius:14px;padding:10px 12px}
+.kv small{display:block;color:var(--mut);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.05em}
+.kv b{font-size:15px}
+.sec{margin-top:18px}
+.sec h4{margin:0 0 6px;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--mut)}
+.sec p{margin:0;line-height:1.5;white-space:pre-wrap}
+.ph-empty{color:#aaa;font-style:italic}
+.links{display:flex;gap:8px;flex-wrap:wrap}
+.lk{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:999px;padding:8px 13px;font-size:13px;font-weight:600;text-decoration:none;background:var(--white);cursor:pointer}
+.lk:hover{border-color:var(--char)}
+.contact{display:grid;grid-template-columns:110px 1fr;gap:6px 12px;font-size:14px}
+.contact span{color:var(--mut)}
+/* form */
+.f{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:18px 22px}
+.f label{display:flex;flex-direction:column;gap:4px;font-size:12px;font-weight:700;color:var(--mut);text-transform:uppercase;letter-spacing:.04em}
+.f label.w{grid-column:1/-1}
+.f input,.f select,.f textarea{border:1px solid var(--line);border-radius:12px;padding:10px 12px;font-size:14px;text-transform:none;letter-spacing:0;font-weight:500;color:var(--char);background:#fff}
+.f textarea{min-height:80px;resize:vertical}
+.thumbs{display:flex;gap:8px;flex-wrap:wrap}
+.thumbs .t{position:relative}.thumbs img{width:84px;height:84px;object-fit:cover;border-radius:10px}
+.thumbs button{position:absolute;top:-6px;right:-6px;border:0;background:var(--char);color:#fff;width:22px;height:22px;border-radius:50%;cursor:pointer;font-size:12px}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--char);color:#fff;padding:12px 20px;border-radius:999px;font-weight:600;z-index:80;display:none}
+.lb{position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:90;display:none;align-items:center;justify-content:center;cursor:zoom-out}
+.lb img{max-width:94vw;max-height:92vh;border-radius:8px}
+.loading{grid-column:1/-1;text-align:center;padding:60px;color:var(--mut)}
+@media (max-width:760px){.bar{flex-wrap:wrap}.search{min-width:0;flex:1 1 100%;order:3}.hero h1{font-size:32px}.kv{grid-template-columns:1fr 1fr}.f{grid-template-columns:1fr}.bar .t{display:none}}
+</style>
+</head>
+<body>
+<header><div class="bar">
+  <svg xmlns="http://www.w3.org/2000/svg" class="logo" viewBox="0 0 368.504 73.7008"><path fill="#F05A5A" d="M 36.976562 7.25 L 36.976562 32.816406 L 36.683594 32.816406 C 34.785156 18.402344 22.503906 7.25 7.554688 7.25 L 7.554688 66.09375 C 22.503906 66.09375 34.785156 54.941406 36.683594 40.527344 L 36.976562 40.527344 L 36.976562 66.09375 C 53.234375 66.09375 66.402344 52.925781 66.402344 36.671875 C 66.402344 20.417969 53.234375 7.25 36.976562 7.25 "/><path fill="currentColor" d="M 293.957031 55.890625 C 287.785156 55.890625 283.042969 51.265625 283.042969 44.738281 C 283.042969 38.214844 287.785156 33.585938 293.957031 33.585938 C 300.1875 33.585938 304.929688 38.214844 304.929688 44.738281 C 304.929688 51.265625 300.125 55.890625 293.957031 55.890625 M 293.957031 66.09375 C 305.820312 66.09375 315.371094 56.78125 315.371094 44.738281 C 315.371094 32.699219 305.820312 23.382812 293.957031 23.382812 C 282.09375 23.382812 272.601562 32.699219 272.601562 44.738281 C 272.601562 56.78125 282.03125 66.09375 293.957031 66.09375 M 250.535156 23.382812 C 245.019531 23.382812 240.984375 25.578125 238.492188 29.199219 C 236.238281 25.460938 232.5 23.382812 227.519531 23.382812 C 222.359375 23.382812 218.5625 25.402344 216.308594 28.78125 L 216.308594 24.511719 L 205.867188 24.511719 L 205.867188 64.90625 L 216.308594 64.90625 L 216.308594 42.246094 C 216.308594 36.195312 219.453125 33.113281 223.898438 33.113281 C 228.289062 33.113281 230.664062 36.019531 230.664062 40.765625 L 230.664062 64.90625 L 241.101562 64.90625 L 241.101562 42.246094 C 241.101562 36.195312 244.011719 33.113281 248.636719 33.113281 C 253.027344 33.113281 255.398438 36.019531 255.398438 40.765625 L 255.398438 64.90625 L 265.839844 64.90625 L 265.839844 39.992188 C 265.839844 29.96875 259.730469 23.382812 250.535156 23.382812 M 185.875 64.96875 L 196.316406 64.96875 L 196.316406 8.078125 L 185.875 8.078125 Z M 154.792969 56.128906 C 148.386719 56.128906 143.640625 51.503906 143.640625 44.738281 C 143.640625 37.976562 148.386719 33.351562 154.792969 33.351562 C 161.257812 33.351562 166.003906 37.976562 166.003906 44.738281 C 166.003906 51.5625 161.257812 56.128906 154.792969 56.128906 M 166.003906 24.570312 L 166.003906 29.316406 C 163.097656 25.699219 158.707031 23.441406 152.835938 23.441406 C 142.097656 23.441406 133.199219 32.757812 133.199219 44.796875 C 133.199219 56.839844 142.097656 66.152344 152.835938 66.152344 C 158.707031 66.152344 163.097656 63.898438 166.003906 60.28125 L 166.003906 65.027344 L 176.445312 65.027344 L 176.445312 24.570312 Z M 106.863281 66.09375 C 118.90625 66.09375 127.386719 59.628906 127.386719 49.070312 C 127.386719 37.503906 117.835938 34.535156 108.878906 31.6875 C 100.339844 29.078125 98.144531 27.238281 98.144531 23.738281 C 98.144531 20.535156 100.871094 18.105469 105.558594 18.105469 C 111.3125 18.105469 114.394531 21.070312 116.414062 25.402344 L 125.785156 20.003906 C 121.988281 11.996094 114.871094 7.25 105.558594 7.25 C 95.890625 7.25 86.992188 13.417969 86.992188 24.035156 C 86.992188 34.773438 95.414062 38.390625 104.015625 40.941406 C 112.4375 43.375 116.234375 44.976562 116.234375 49.1875 C 116.234375 52.332031 113.863281 55.179688 107.160156 55.179688 C 100.101562 55.179688 96.183594 51.796875 94.167969 46.519531 L 84.617188 52.09375 C 87.703125 60.519531 95.296875 66.09375 106.863281 66.09375 M 360.453125 40.113281 L 360.453125 64.90625 L 350.011719 64.90625 L 350.011719 41.417969 C 350.011719 35.902344 346.691406 33.113281 342.007812 33.113281 C 336.902344 33.113281 333.109375 36.078125 333.109375 43.136719 L 333.109375 64.96875 L 322.667969 64.96875 C 322.667969 64.96875 322.667969 30.324219 322.667969 24.570312 L 333.109375 24.570312 L 333.109375 29.078125 C 335.539062 25.460938 339.75 23.441406 345.148438 23.441406 C 353.75 23.382812 360.453125 29.375 360.453125 40.113281 "/></svg>
+  <div class="t">Merch Lab · Suppliers</div>
+  <div class="sp"></div>
+  <div class="search"><span>⌕</span><input id="q" placeholder="Search supplier, product, contact…"></div>
+  <button class="btn coral" id="add">+ Add supplier</button>
+</div></header>
+
+<section class="hero">
+  <h1>Who makes <span>what</span> for Salmon</h1>
+  <p>All our China suppliers in one place — Canton Fair, Alibaba and past orders. Click a card to see photos, contacts and what we did together.</p>
+  <div class="stats" id="stats"></div>
+</section>
+
+<div class="filters" id="cats"></div>
+<div class="filters">
+  <select class="sel" id="fStatus"><option value="">All statuses</option></select>
+  <select class="sel" id="fSource"><option value="">All sources</option></select>
+  <select class="sel" id="fSort"><option value="name">Sort: A–Z</option><option value="recent">Sort: recently updated</option><option value="photos">Sort: with photos first</option></select>
+</div>
+<main class="grid" id="grid"><div class="loading">Loading suppliers…</div></main>
+
+<div class="ov" id="ov"><div class="dr" id="dr"></div></div>
+<div class="lb" id="lb"><img id="lbi" alt=""></div>
+<div class="toast" id="toast"></div>
+
+<script>
+const API = "https://script.google.com/macros/s/AKfycbwzk68oBX7BJjOGLT31-hDTeBQ_XJqhpV6b5-h1lS5j5783my69pElPm_d5w8_YqOVG/exec";
+const STATUSES = ["Contact","Quoted","Sample","Ordered","Worked with","No reply"];
+const FIELDS = [
+ ["name","Supplier name",1],["category","Category"],["status","Status"],["source","Source"],["date_met","Date met"],
+ ["products","Products",1],["location","Location"],["contact","Contact person"],["email","Email"],["whatsapp","WhatsApp"],["wechat","WeChat ID"],
+ ["website","Website"],["catalog","Catalog link"],["alibaba","Alibaba link"],["miro","Miro (booth photos)"],
+ ["moq","MOQ"],["price","Price at MOQ (USD)"],["lead_time","Lead time (days)"],["payment","Payment terms"],["priority","Priority"],
+ ["next_step","Next step",1],["worked_on","What we did together",1,"ta"],["description","Description (our words)",1,"ta"],["notes","Notes",1,"ta"]];
+let DATA=[], HEAD=[], state={cat:"",q:"",status:"",source:"",sort:"name"};
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const photos=r=>String(r.photos||"").split(",").map(s=>s.trim()).filter(Boolean);
+const store={get(k){try{return localStorage.getItem(k)}catch(e){return null}},set(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
+function toast(t){const e=$("#toast");e.textContent=t;e.style.display="block";clearTimeout(e._t);e._t=setTimeout(()=>e.style.display="none",2600)}
+function url(u){u=String(u||"").trim();if(!u)return"";return /^https?:/i.test(u)?u:"https://"+u}
+
+async function load(){
+  try{
+    const r=await fetch(API,{redirect:"follow"});const j=await r.json();
+    if(!j.ok)throw new Error(j.error);
+    DATA=j.rows;HEAD=j.head;render();
+  }catch(e){$("#grid").innerHTML=`<div class="empty">Couldn't load data. ${esc(e.message||e)}</div>`}
+}
+async function post(body){
+  const r=await fetch(API,{method:"POST",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify(body),redirect:"follow"});
+  const j=await r.json();if(!j.ok)throw new Error(j.error||"save failed");return j;
+}
+
+function filtered(){
+  const q=state.q.toLowerCase();
+  let L=DATA.filter(r=>(!state.cat||r.category===state.cat)&&(!state.status||r.status===state.status)&&(!state.source||r.source===state.source)
+    &&(!q||[r.name,r.products,r.tags,r.contact,r.category,r.notes,r.location].join(" ").toLowerCase().includes(q)));
+  if(state.sort==="name")L.sort((a,b)=>a.name.localeCompare(b.name));
+  if(state.sort==="recent")L.sort((a,b)=>String(b.updated_at).localeCompare(String(a.updated_at)));
+  if(state.sort==="photos")L.sort((a,b)=>photos(b).length-photos(a).length);
+  return L;
+}
+function render(){
+  const cats={};DATA.forEach(r=>{const c=r.category||"Other";cats[c]=(cats[c]||0)+1});
+  $("#cats").innerHTML=[`<button class="chip ${!state.cat?"on":""}" data-c="">All<span class="n">${DATA.length}</span></button>`]
+    .concat(Object.keys(cats).sort().map(c=>`<button class="chip ${state.cat===c?"on":""}" data-c="${esc(c)}">${esc(c)}<span class="n">${cats[c]}</span></button>`)).join("");
+  $("#cats").querySelectorAll(".chip").forEach(b=>b.onclick=()=>{state.cat=b.dataset.c;render()});
+  const ss=[...new Set(DATA.map(r=>r.status).filter(Boolean))], so=[...new Set(DATA.map(r=>r.source).filter(Boolean))];
+  $("#fStatus").innerHTML=`<option value="">All statuses</option>`+ss.map(s=>`<option ${state.status===s?"selected":""}>${esc(s)}</option>`).join("");
+  $("#fSource").innerHTML=`<option value="">All sources</option>`+so.map(s=>`<option ${state.source===s?"selected":""}>${esc(s)}</option>`).join("");
+  const nq=DATA.filter(r=>["Quoted","Sample","Ordered","Worked with"].includes(r.status)).length;
+  $("#stats").innerHTML=`<div class="stat"><b>${DATA.length}</b>suppliers</div><div class="stat"><b>${Object.keys(cats).length}</b>categories</div><div class="stat"><b>${nq}</b>quoted / sampled / ordered</div><div class="stat"><b>${DATA.filter(r=>photos(r).length).length}</b>with photos</div>`;
+  const L=filtered();
+  $("#grid").innerHTML=L.length?L.map(card).join(""):`<div class="empty">Nothing found</div>`;
+  $("#grid").querySelectorAll(".card").forEach(c=>c.onclick=()=>open(c.dataset.id));
+}
+function card(r){
+  const p=photos(r);
+  return `<article class="card" data-id="${esc(r.id)}"><div class="ph">${p.length?`<img loading="lazy" src="${esc(p[0])}" alt="">`:`<div class="ph0">${esc((r.name||"?").trim()[0])}</div>`}${p.length>1?`<span class="cnt">${p.length} photos</span>`:""}</div>
+  <div class="cb"><div class="cat">${esc(r.category)}</div><div class="nm">${esc(r.name)}</div><div class="pr">${esc(r.products)}</div>
+  <div class="meta">${r.status?`<span class="st st-${esc(r.status.replace(/ /g,"-"))}">${esc(r.status)}</span>`:""}${r.moq?`<span class="tag">MOQ ${esc(r.moq)}</span>`:""}${r.price?`<span class="tag">${esc(r.price)}</span>`:""}<span class="tag">${esc(r.source)}</span></div></div></article>`;
+}
+function lk(href,label,ico){return href?`<a class="lk" href="${esc(href)}" target="_blank" rel="noopener">${ico} ${esc(label)}</a>`:""}
+function open(id){
+  const r=DATA.find(x=>x.id===id);if(!r)return;const p=photos(r);
+  const wa=String(r.whatsapp||"").replace(/[^\d]/g,"");
+  $("#dr").innerHTML=`<div class="dh"><button class="x" id="cl">×</button><div class="sp"></div><button class="btn ghost" id="ed">Edit</button></div>
+  ${p.length?`<div class="gal">${p.map(u=>`<img loading="lazy" src="${esc(u)}" alt="">`).join("")}</div>`:""}
+  <div class="db"><div class="cat">${esc(r.category)}</div><h2>${esc(r.name)}</h2>
+   <div class="meta">${r.status?`<span class="st st-${esc(r.status.replace(/ /g,"-"))}">${esc(r.status)}</span>`:""}<span class="tag">${esc(r.source)}${r.date_met?" · "+esc(r.date_met):""}</span>${r.location?`<span class="tag">📍 ${esc(r.location)}</span>`:""}</div>
+   <div class="kv"><div><small>MOQ</small><b>${esc(r.moq||"—")}</b></div><div><small>Price</small><b>${esc(r.price||"—")}</b></div><div><small>Lead time</small><b>${esc(r.lead_time||"—")}</b></div></div>
+   <div class="sec"><h4>Products</h4><p>${esc(r.products||"—")}</p></div>
+   <div class="sec"><h4>Description</h4><p>${r.description?esc(r.description):'<span class="ph-empty">No description yet — add yours</span>'}</p></div>
+   <div class="sec"><h4>What we did together</h4><p>${r.worked_on?esc(r.worked_on):'<span class="ph-empty">—</span>'}</p></div>
+   ${r.notes?`<div class="sec"><h4>Notes</h4><p>${esc(r.notes)}</p></div>`:""}
+   ${r.next_step?`<div class="sec"><h4>Next step</h4><p>${esc(r.next_step)}</p></div>`:""}
+   <div class="sec"><h4>Contact</h4><div class="contact">
+     ${r.contact?`<span>Person</span><div>${esc(r.contact)}</div>`:""}${r.email?`<span>Email</span><div><a href="mailto:${esc(r.email)}">${esc(r.email)}</a></div>`:""}
+     ${r.whatsapp?`<span>WhatsApp</span><div>${esc(r.whatsapp)}</div>`:""}${r.wechat?`<span>WeChat</span><div>${esc(r.wechat)}</div>`:""}</div></div>
+   <div class="sec"><h4>Links</h4><div class="links">${lk(url(r.website),"Website","🌐")}${r.catalog&&r.catalog!==r.website?lk(url(r.catalog),"Catalog","📘"):""}${lk(url(r.alibaba),"Alibaba","🛒")}${lk(url(r.miro),"Booth photos in Miro","🖼")}${wa?lk("https://wa.me/"+wa,"WhatsApp","💬"):""}${r.wechat?`<button class="lk" id="cpw">📋 Copy WeChat</button>`:""}</div></div>
+   ${r.updated_at?`<p style="color:var(--mut);font-size:12px;margin-top:22px">Updated ${esc(r.updated_at)}${r.updated_by?" by "+esc(r.updated_by):""}</p>`:""}
+  </div>`;
+  $("#ov").classList.add("on");
+  $("#cl").onclick=close;$("#ed").onclick=()=>edit(r);
+  const cw=$("#cpw");if(cw)cw.onclick=()=>{navigator.clipboard?.writeText(r.wechat);toast("WeChat ID copied")};
+  $("#dr").querySelectorAll(".gal img").forEach(i=>i.onclick=()=>{$("#lbi").src=i.src;$("#lb").style.display="flex"});
+}
+function close(){$("#ov").classList.remove("on")}
+$("#ov").onclick=e=>{if(e.target.id==="ov")close()};
+$("#lb").onclick=()=>$("#lb").style.display="none";
+document.addEventListener("keydown",e=>{if(e.key==="Escape"){$("#lb").style.display="none";close()}});
+
+function edit(r){
+  r=r||{id:"",source:"Manual",status:"Contact",category:state.cat||""};
+  let ph=photos(r);
+  const cats=[...new Set(DATA.map(x=>x.category).filter(Boolean))].sort();
+  const inp=([k,l,w,t])=>{const v=esc(r[k]||"");
+    if(k==="status")return `<label>${l}<select name="${k}">${STATUSES.map(s=>`<option ${r[k]===s?"selected":""}>${s}</option>`).join("")}</select></label>`;
+    if(k==="category")return `<label>${l}<input name="${k}" list="catl" value="${v}"><datalist id="catl">${cats.map(c=>`<option value="${esc(c)}">`).join("")}</datalist></label>`;
+    return `<label class="${w?"w":""}">${l}${t==="ta"?`<textarea name="${k}">${v}</textarea>`:`<input name="${k}" value="${v}">`}</label>`};
+  $("#dr").innerHTML=`<div class="dh"><button class="x" id="cl">×</button><b>${r.id?"Edit supplier":"New supplier"}</b><div class="sp"></div><button class="btn coral" id="sv">Save</button></div>
+  <form class="f" id="fm">
+   <label class="w">Your name (shown as “updated by”)<input name="__user" value="${esc(store.get("mlUser")||"")}" placeholder="e.g. Max"></label>
+   ${FIELDS.map(inp).join("")}
+   <label class="w">Photos<div class="thumbs" id="th"></div><input type="file" id="up" accept="image/*" multiple></label>
+  </form>`;
+  const th=()=>{$("#th").innerHTML=ph.map((u,i)=>`<div class="t"><img src="${esc(u)}"><button type="button" data-i="${i}">×</button></div>`).join("");
+    $("#th").querySelectorAll("button").forEach(b=>b.onclick=()=>{ph.splice(+b.dataset.i,1);th()})};th();
+  $("#cl").onclick=()=>r.id?open(r.id):close();
+  $("#up").onchange=async e=>{
+    for(const f of e.target.files){toast("Uploading "+f.name+"…");
+      try{const b64=await shrink(f);const j=await post({action:"upload",data:b64,mime:"image/jpeg",name:f.name});ph.push(j.url);th()}catch(err){toast("Upload failed: "+err.message)}}
+    toast("Photos uploaded");e.target.value="";
+  };
+  $("#sv").onclick=async()=>{
+    const fd=new FormData($("#fm"));const rec={id:r.id};FIELDS.forEach(([k])=>rec[k]=fd.get(k)||"");rec.photos=ph.join(", ");
+    const user=fd.get("__user")||"";store.set("mlUser",user);rec.updated_by=user;
+    if(!rec.name.trim())return toast("Add a supplier name");
+    $("#sv").disabled=true;$("#sv").textContent="Saving…";
+    try{const j=await post({action:"upsert",record:rec,user});toast("Saved");await load();open(j.id)}
+    catch(err){toast("Save failed: "+err.message);$("#sv").disabled=false;$("#sv").textContent="Save"}
+  };
+  $("#ov").classList.add("on");
+}
+function shrink(file){return new Promise((res,rej)=>{const im=new Image();im.onload=()=>{const m=1600,s=Math.min(1,m/Math.max(im.width,im.height));
+  const c=document.createElement("canvas");c.width=im.width*s;c.height=im.height*s;c.getContext("2d").drawImage(im,0,0,c.width,c.height);
+  res(c.toDataURL("image/jpeg",.85).split(",")[1])};im.onerror=rej;im.src=URL.createObjectURL(file)})}
+
+$("#q").oninput=e=>{state.q=e.target.value;render()};
+$("#fStatus").onchange=e=>{state.status=e.target.value;render()};
+$("#fSource").onchange=e=>{state.source=e.target.value;render()};
+$("#fSort").onchange=e=>{state.sort=e.target.value;render()};
+$("#add").onclick=()=>edit(null);
+load();
+</script>
+</body>
+</html>
