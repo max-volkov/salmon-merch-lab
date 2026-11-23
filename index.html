@@ -6,7 +6,7 @@
 <meta name="robots" content="noindex, nofollow">
 <title>Salmon Merch Lab — Suppliers</title>
 <style>
-:root{--coral:#F05A5A;--ink:#311754;--mint:#BEF5F1;--font:Gilroy,Arial,"Helvetica Neue",sans-serif;
+:root{--maxw:1320px;--pad:24px;--cols:4;--gap:18px;--coral:#F05A5A;--ink:#311754;--mint:#BEF5F1;--font:Gilroy,Arial,"Helvetica Neue",sans-serif;
 --bg:#16161A;--surf:#1F1F24;--surf2:#26262C;--line:#2E2E35;--text:#F3F2EE;--mut:#9A98A0;--hdr:rgba(22,22,26,.88);--chipOn:#F3F2EE;--chipOnT:#16161A;--shadow:0 14px 34px rgba(0,0,0,.45)}
 html[data-theme=light]{--bg:#F3F2EE;--surf:#FFFFFF;--surf2:#F3F2EE;--line:#E4E2DC;--text:#231F20;--mut:#77737A;--hdr:rgba(243,242,238,.92);--chipOn:#231F20;--chipOnT:#fff;--shadow:0 14px 34px rgba(35,31,32,.10)}
 *{box-sizing:border-box}html,body{margin:0}body{font-family:var(--font);background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
@@ -14,7 +14,7 @@ button,input,select,textarea{font:inherit;color:inherit}
 a{color:inherit}
 .logo{height:26px;width:auto;color:var(--text);display:block}
 header{position:sticky;top:0;z-index:20;background:var(--hdr);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.bar{max-width:1320px;margin:0 auto;padding:14px 24px;display:flex;gap:18px;align-items:center}
+.bar{max-width:var(--maxw);margin:0 auto;padding:14px var(--pad);display:flex;gap:18px;align-items:center}
 .bar .t{font-weight:700;font-size:14px;color:var(--mut);border-left:1px solid var(--line);padding-left:16px}
 .sp{flex:1}
 .search{display:flex;align-items:center;gap:8px;background:var(--surf);border:1px solid var(--line);border-radius:999px;padding:9px 16px;min-width:300px}
@@ -22,19 +22,19 @@ header{position:sticky;top:0;z-index:20;background:var(--hdr);backdrop-filter:bl
 .btn{border:0;border-radius:999px;padding:10px 18px;font-weight:700;font-size:14px;cursor:pointer;background:var(--text);color:var(--bg);white-space:nowrap}
 .btn.coral{background:var(--coral);color:#fff}.btn.ghost{background:transparent;color:var(--text);border:1px solid var(--line)}
 .btn:disabled{opacity:.5;cursor:default}
-.hero{max-width:1320px;margin:0 auto;padding:36px 24px 8px}
-.hero h1{font-size:44px;line-height:1.02;margin:0 0 10px;font-weight:800;letter-spacing:-.02em}
+.hero{max-width:var(--maxw);margin:0 auto;padding:clamp(22px,3vw,48px) var(--pad) 8px}
+.hero h1{font-size:clamp(30px,3.2vw,60px);line-height:1.02;margin:0 0 10px;font-weight:800;letter-spacing:-.02em}
 .hero h1 span{color:var(--coral)}
-.hero p{margin:0;color:var(--mut);font-size:16px}
+.hero p{margin:0;color:var(--mut);font-size:clamp(14px,1vw,18px);max-width:70ch}
 .stats{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap}
 .stat{background:var(--surf);border:1px solid var(--line);border-radius:14px;padding:10px 16px;font-size:13px;color:var(--mut)}
 .stat b{display:block;font-size:22px;color:var(--text)}
-.filters{max-width:1320px;margin:0 auto;padding:18px 24px 6px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.filters{max-width:var(--maxw);margin:0 auto;padding:16px var(--pad) 4px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
 .chip{border:1px solid var(--line);background:var(--surf);color:var(--text);border-radius:999px;padding:8px 14px;font-size:13px;font-weight:600;cursor:pointer;white-space:nowrap}
 .chip .n{color:var(--mut);font-weight:500;margin-left:4px}
 .chip.on{background:var(--chipOn);color:var(--chipOnT);border-color:var(--chipOn)}.chip.on .n{color:var(--mut)}
 .sel{border:1px solid var(--line);background:var(--surf);color:var(--text);border-radius:999px;padding:8px 12px;font-size:13px;font-weight:600}
-.grid{max-width:1320px;margin:0 auto;padding:14px 24px 80px;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px}
+.grid{max-width:var(--maxw);margin:0 auto;padding:14px var(--pad) 80px;display:grid;grid-template-columns:repeat(var(--cols),minmax(0,1fr));gap:var(--gap)}
 .card{background:var(--surf);border-radius:20px;overflow:hidden;cursor:pointer;border:1px solid var(--line);transition:transform .15s,box-shadow .15s;display:flex;flex-direction:column}
 .card:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:var(--coral)}
 .ph{aspect-ratio:4/3;background:var(--surf2);position:relative;overflow:hidden}
@@ -97,7 +97,28 @@ header{position:sticky;top:0;z-index:20;background:var(--hdr);backdrop-filter:bl
 .lb{position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:90;display:none;align-items:center;justify-content:center;cursor:zoom-out}
 .lb img{max-width:94vw;max-height:92vh;border-radius:8px}
 .loading{grid-column:1/-1;text-align:center;padding:60px;color:var(--mut)}
-@media (max-width:760px){.bar{flex-wrap:wrap}.search{min-width:0;flex:1 1 100%;order:3}.hero h1{font-size:32px}.kv{grid-template-columns:1fr 1fr}.f{grid-template-columns:1fr}.bar .t{display:none}}
+/* responsive */
+@media (min-width:1500px){:root{--maxw:1560px;--cols:5;--pad:32px;--gap:20px}}
+@media (min-width:1800px){:root{--maxw:1840px;--cols:6;--pad:40px;--gap:22px}.nm{font-size:17px}}
+@media (min-width:2300px){:root{--maxw:2300px;--cols:7;--pad:48px;--gap:24px}}
+@media (min-width:2900px){:root{--maxw:2800px;--cols:8}}
+@media (max-width:1180px){:root{--cols:3}}
+@media (max-width:860px){:root{--cols:2;--pad:16px;--gap:12px}.cb{padding:12px}.nm{font-size:15px}}
+@media (max-width:760px){.bar{flex-wrap:wrap;gap:10px}.search{min-width:0;flex:1 1 100%;order:3;padding:8px 14px}.kv{grid-template-columns:1fr 1fr}.f{grid-template-columns:1fr}.bar .t{display:none}
+ .filters{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}.filters::-webkit-scrollbar{display:none}
+ .dr{width:100%}.gal{padding:0}.gv{border-radius:0}.gt{padding:0 12px 4px}.db{padding:16px}.db h2{font-size:24px}.dh{padding:10px 14px}
+ .ga{width:38px;height:38px}.stat{padding:8px 12px}.stat b{font-size:18px}}
+@media (max-width:480px){:root{--cols:1}.btn#add{padding:9px 14px}.ph{aspect-ratio:16/10}.contact{grid-template-columns:90px 1fr}}
+/* wide drawer: gallery left, details right */
+@media (min-width:1200px){
+ .dr.split{width:min(1280px,86vw);display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);grid-template-rows:auto 1fr;align-content:start}
+ .dr.split .dh{grid-column:1/-1}
+ .dr.split .gal{position:sticky;top:67px;align-self:start;padding:22px 0 22px 26px}
+ .dr.split .gv{aspect-ratio:4/3;max-height:calc(100vh - 195px)}
+ .dr.split .db{padding:22px 28px 40px}
+ .dr:not(.split){width:min(860px,70vw)}
+}
+@media (min-width:1900px){.dr.split{width:min(1600px,80vw)}.gt img{width:76px;height:76px}.db h2{font-size:34px}}
 </style>
 </head>
 <body>
@@ -190,7 +211,7 @@ function lk(href,label,ico){return href?`<a class="lk" href="${esc(href)}" targe
 function open(id){
   const r=DATA.find(x=>x.id===id);if(!r)return;const p=photos(r);
   const wa=String(r.whatsapp||"").replace(/[^\d]/g,"");
-  $("#dr").innerHTML=`<div class="dh"><button class="x" id="cl">×</button><div class="sp"></div><button class="btn ghost" id="ed">Edit</button></div>
+  $("#dr").className="dr"+(p.length?" split":"");$("#dr").innerHTML=`<div class="dh"><button class="x" id="cl">×</button><div class="sp"></div><button class="btn ghost" id="ed">Edit</button></div>
   ${p.length?`<div class="gal"><div class="gv" id="gv"><img id="gi" src="${esc(p[0])}" alt="">${p.length>1?`<button class="ga l" id="gp">‹</button><button class="ga r" id="gn">›</button><span class="gc" id="gcn">1 / ${p.length}</span>`:""}</div>${p.length>1?`<div class="gt" id="gt">${p.map((u,i)=>`<img loading="lazy" data-i="${i}" class="${i?"":"on"}" src="${esc(u)}" alt="">`).join("")}</div>`:""}</div>`:""}
   <div class="db"><div class="cat">${esc(r.category)}</div><h2>${esc(r.name)}</h2>
    <div class="meta">${r.status?`<span class="st st-${esc(r.status.replace(/ /g,"-"))}">${esc(r.status)}</span>`:""}<span class="tag">${esc(r.source)}${r.date_met?" · "+esc(r.date_met):""}</span>${r.location?`<span class="tag">📍 ${esc(r.location)}</span>`:""}</div>
@@ -236,7 +257,7 @@ function edit(r){
     if(k==="status")return `<label>${l}<select name="${k}">${STATUSES.map(s=>`<option ${r[k]===s?"selected":""}>${s}</option>`).join("")}</select></label>`;
     if(k==="category")return `<label>${l}<input name="${k}" list="catl" value="${v}"><datalist id="catl">${cats.map(c=>`<option value="${esc(c)}">`).join("")}</datalist></label>`;
     return `<label class="${w?"w":""}">${l}${t==="ta"?`<textarea name="${k}">${v}</textarea>`:`<input name="${k}" value="${v}">`}</label>`};
-  $("#dr").innerHTML=`<div class="dh"><button class="x" id="cl">×</button><b>${r.id?"Edit supplier":"New supplier"}</b><div class="sp"></div><button class="btn coral" id="sv">Save</button></div>
+  $("#dr").className="dr";$("#dr").innerHTML=`<div class="dh"><button class="x" id="cl">×</button><b>${r.id?"Edit supplier":"New supplier"}</b><div class="sp"></div><button class="btn coral" id="sv">Save</button></div>
   <form class="f" id="fm">
    <label class="w">Your name (shown as “updated by”)<input name="__user" value="${esc(store.get("mlUser")||"")}" placeholder="e.g. Max"></label>
    ${FIELDS.map(inp).join("")}
